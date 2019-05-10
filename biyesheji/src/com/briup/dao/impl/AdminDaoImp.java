@@ -45,16 +45,16 @@ public class AdminDaoImp implements AdminDao {
 		return admin;
 	}
 
-	@Override
-	public List<Admin> findAdminById(int id) throws Exception {
-		// TODO Auto-generated method stub
-		
-		AdminMapper adminMapper = session.getMapper(AdminMapper.class);
-		List<Admin> admin= adminMapper.selectAdminById(id);
-		session.commit();
-		session.close();
-		return admin;
-		
-	}
+//	@Override
+//	public List<Admin> findAdminById(int id) throws Exception {
+//		// TODO Auto-generated method stub
+//		
+//		AdminMapper adminMapper = session.getMapper(AdminMapper.class);
+//		List<Admin> admin= adminMapper.selectAdminById(id);
+//		session.commit();
+//		session.close();
+//		return admin;
+//		
+//	}
 
 }

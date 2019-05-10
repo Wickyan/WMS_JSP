@@ -8,15 +8,20 @@
 	<select id="selectAllGoods" parameterType="Goods" resultType="Goods">
 		   select * from goods
 	</select>
+	
 	<select id="selectGoodsById" parameterType="string" resultType="Goods">
 		select * from goods
 		where goodsid=#{goodsid}
 	</select>
+	
+	
 	<insert id="insertGoods" parameterType="Goods">
+	<!--
 		<selectKey keyColumn="id" keyProperty="id" order="BEFORE" resultType="int">
 			select goods_seq.nextval from dual
 		</selectKey>
-	  insert into goods values(#{id},#{name},#{address},#{num},#{goodsid},#{sort},#{price})
+		-->
+	  insert into goods values(#{name},#{address},#{num},#{goodsid},#{sort},#{price})
 	</insert>
 	<update id="updateGoods" parameterType="Goods"> 
 			update goods set num=#{num}

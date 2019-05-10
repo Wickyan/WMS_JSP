@@ -1,24 +1,23 @@
 package com.briup.bean;
 public class Goods {
-     private int id;
-     private String goodsid;
      private String name;
      private String address;
      private String num;
      private String sort;
      private String price;
-	/**
-	 * @return the id
-	 */
-	public int getId() {
-		return id;
-	}
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(int id) {
-		this.id = id;
-	}
+     private String goodsid;
+     /**
+ 	 * @return the goodsid
+ 	 */
+ 	public String getGoodsid() {
+ 		return goodsid;
+ 	}
+ 	/**
+ 	 * @param goodsid the goodsid to set
+ 	 */
+ 	public void setGoodsid(String goodsid) {
+ 		this.goodsid = goodsid;
+ 	}
 	/**
 	 * @return the name
 	 */
@@ -37,18 +36,6 @@ public class Goods {
 	
 	public String getAddress() {
 		return address;
-	}
-	/**
-	 * @return the goodsid
-	 */
-	public String getGoodsid() {
-		return goodsid;
-	}
-	/**
-	 * @param goodsid the goodsid to set
-	 */
-	public void setGoodsid(String goodsid) {
-		this.goodsid = goodsid;
 	}
 	/**
 	 * @param address the address to set
@@ -97,8 +84,8 @@ public class Goods {
 	 */
 	@Override
 	public String toString() {
-		return "Goods [id=" + id + ", goodsid=" + goodsid + ", name=" + name + ", address=" + address + ", num=" + num
-				+ ", sort=" + sort + ", price=" + price + "]";
+		return "Goods  name=" + name + ", address=" + address + ", num=" + num
+				+ ", sort=" + sort + ", price=" + price + " ";
 	}
      
 }

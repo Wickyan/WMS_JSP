@@ -17,10 +17,10 @@
       <p align="center">管理员登录</p></div>
       
    <div class="d1">
-        <input name="in_be" value="请输入管理员帐号">
+        <input name="in_be" value="" placeholder="&nbsp&nbsp&nbsp请输入管理员帐号">
    </div>
     <div class="d2"> 
-           <input name="pass" value="请输入管理员密码">
+           <input name="pass" value="" type="password" placeholder="&nbsp&nbsp&nbsp请输入管理员密码">
     </div>
     
      <div class="d4"  >

@@ -9,7 +9,7 @@
 		<meta http-equiv="Content-Language" content="zh-cn">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="description" content="仓库管理管理员注册">
-		<title>仓库管理管理员注册页面</title>
+		<title>管理管理员信息</title>
 		<LINK href="css/main.css" rel=stylesheet>
 		<script language = "JavaScript" src = "js/main.js"></script>
 		<script language = "JavaScript" src = "js/main.js"></script>
@@ -27,9 +27,9 @@
 <!--文件体开始-->
 <table width="80%" cellspacing=1 cellpadding=3 align=center class=tableBorder4>
 		<tr>
-		<td height=25 valign=middle bgcolor="#E4F3FF" align="center">
+		<td height=25      width="100px" valign=middle bgcolor="#E4F3FF" align="center">
                 <a href="AFirstLog.jsp">返回首页</a>        
-        </td><td height=25 valign=middle bgcolor="#E4F3FF" align="center">
+        </td><td height=25  valign=middle bgcolor="#E4F3FF" align="center">
                                      欢迎访问 <b>管理员信息页面</b>
         </td> </tr>
 		</table>

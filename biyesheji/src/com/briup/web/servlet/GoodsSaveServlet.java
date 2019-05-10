@@ -45,7 +45,7 @@ public class GoodsSaveServlet extends HttpServlet {
 				//List<Goods> aGoods = goodsDaoImp.findGoods();
 				//System.out.println("铅笔的结果："+pGoods);
 				//System.out.println("所有结果："+aGoods);
-				if (fGoods.size()==0 && fGoodsid.size()==0) {
+				if (fGoods.size()==0 && fGoodsid.size()==0) { 
 					goodsDaoImp.saveGoods(goods);
 					sqlSession.commit();
 					response.sendRedirect("AddGoods.jsp");

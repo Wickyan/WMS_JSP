@@ -6,21 +6,24 @@
 		select * from customer
 		where account=#{account}
 	</select>
+	<!-- 
 	<select id="selectCustomerById" 
 	parameterType="int" resultType="Customer">
 		select * from customer
 		where name=#{id}
 	</select>
+	 -->
 	<select id="selectAllCustomer" 
 	parameterType="string" resultType="Customer">
 		select * from customer
 		
 	</select>
 	<insert id="insertCustomer" parameterType="Customer">
-		<selectKey keyColumn="id" keyProperty="id" order="BEFORE" resultType="int">
+	<!--	<selectKey keyColumn="id" keyProperty="id" order="BEFORE" resultType="int">
 			select customer_seq.nextval from dual
 		</selectKey>
-	insert into customer values(#{id},#{account},#{password},#{name},#{sex},#{age},#{phone},#{email},#{address})
+		-->
+	insert into customer values(#{account},#{password},#{name},#{sex},#{age},#{phone},#{email},#{address})
 	</insert>
 	<update id="updateCustomer" parameterType="Customer"> 
 			update Customer set account=#{account},password=#{password}, name=#{name}, sex=#{sex}, age=#{age}, phone=#{phone}, address=#{address}, email=#{email}

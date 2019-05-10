@@ -12,5 +12,5 @@ public interface AdminDao {
 	//查找用户
 	List<Admin> findAdminByName(String name) throws Exception;
 	
-	List<Admin> findAdminById(int id) throws Exception;
+//	List<Admin> findAdminById(int id) throws Exception;
 }

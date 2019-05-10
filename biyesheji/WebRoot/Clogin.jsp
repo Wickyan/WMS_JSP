@@ -15,11 +15,11 @@
     <div class="d0">
       <p align="center">客户登录</p></div>
     <div class="d1">
-        <input name="cin_be" value="请输入客户帐号">
+        <input name="cin_be" value="" placeholder="&nbsp&nbsp请输入客户帐号">
       
     </div>
     <div class="d2"> 
-           <input name="cpass" value="请输入客户密码">
+           <input name="cpass" type="password" value="" placeholder="&nbsp&nbsp请输入客户密码">
     </div>
     
      <div class="d4"  >

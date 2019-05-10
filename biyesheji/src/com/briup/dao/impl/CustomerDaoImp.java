@@ -44,14 +44,14 @@ public class CustomerDaoImp implements CustomerDao{
 		return customer;
 	}
 
-	@Override
-	public List<Customer> findCustomerById(int id) throws Exception {
-		// TODO Auto-generated method stub
-		SqlSession session = MybatisSessionFactory.getSession();
-		CustomerMapper customerMapper = session.getMapper(CustomerMapper.class);
-		List<Customer> customer =  customerMapper.selectCustomerById(id);
-		     return customer;
-	}
+//	@Override
+//	public List<Customer> findCustomerById(int id) throws Exception {
+//		// TODO Auto-generated method stub
+//		SqlSession session = MybatisSessionFactory.getSession();
+//		CustomerMapper customerMapper = session.getMapper(CustomerMapper.class);
+//		List<Customer> customer =  customerMapper.selectCustomerById(id);
+//		     return customer;
+//	}
 
 	@Override
 	public void deleteCustomer(Customer customer) throws Exception {

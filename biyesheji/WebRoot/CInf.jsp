@@ -29,8 +29,7 @@
 <table width="80%" cellspacing=1 cellpadding=3 align=center class=tableBorder4>
 		<tr>
 		<td height=25 width="100px" valign=middle bgcolor="#E4F3FF" align="center">
-                                    <a href="CFirstLog.jsp">返回客户首页</a></td>
-                
+              		<a href="CFirstLog.jsp">返回客户首页</a></td>
 		<td height=25 valign=middle bgcolor="#E4F3FF" align="center">
                                      欢迎访问 <b>客户信息页面</b></td>
                 </tr>
@@ -107,7 +106,7 @@
 		
 		<tr>
 			<td class="tablebody2" valign="middle" colspan="2" align="center">
-			<input type="submit" value="修 改" onclick="javascript:checkAInfReg()">&nbsp;&nbsp;&nbsp;<input type="reset" name="reset" value="清 除"></td>
+			<input type="submit" value="修 改" onclick="javascript:checkAInfReg()">&nbsp;&nbsp;&nbsp;<input type="reset" name="reset" value="重置"></td>
 		</tr>
 	</table>
 </form>

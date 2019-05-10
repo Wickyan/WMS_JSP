@@ -41,6 +41,8 @@ function MM_swapImage() { //v3.0
 }
 
 function checkMe() {
+	 alert("请输入您的账户或密码！");
+	 return false;
    if(document.Alogin.in_be.value == "请输入管理员账号"||document.Alogin.pass.value == "请输入管理员密码") {
           alert("请输入您的账户或密码！");
           document.Alogin.in_be.focus();

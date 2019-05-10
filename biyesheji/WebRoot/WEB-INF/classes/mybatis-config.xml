@@ -13,10 +13,10 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<environment id="develepment">
 			<transactionManager type="JDBC"></transactionManager>
 			<dataSource type="POOLED">
-				<property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
-				<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
-				<property name="username" value="test1"/>
-				<property name="password" value="123456"/>
+				<property name="driver" value="com.mysql.jdbc.Driver"/>
+				<property name="url" value="jdbc:mysql://localhost:3306/mvs"/>
+				<property name="username" value="root"/>
+				<property name="password" value="12345"/>
 			</dataSource>
 		</environment>
 	</environments>

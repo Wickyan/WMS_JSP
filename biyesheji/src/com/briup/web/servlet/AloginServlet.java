@@ -42,19 +42,19 @@ public class AloginServlet extends HttpServlet {
 		    sqlSession.commit();
 		//session.close();
 		
-		System.out.println("用户名不存在，ADS开始注册"+fadmin);
+		System.out.println("下面开始比较账号和密码"+fadmin);
         for(Admin fAdmin2:fadmin)	
         {   
 	      if( password.equals(fAdmin2.getPassword()))
 	      {
 	      response.sendRedirect("AFirstLog.jsp");
 	      session.setAttribute("Admin", fAdmin2);
-	      //System.out.println("帐号密码正确！");
+	      System.out.println("帐号密码正确！");
 	          find=true;
 		  }
         }
 		 if (fadmin.size()==0) {
-			 System.out.println("用户名不存在，ADS开始注册"+fadmin);
+			 System.out.println("用户名不存在"+fadmin);
 			 response.sendRedirect("AloginFail.html");
 			 throw new AdminServiceException("用户名不存在！");
 			}

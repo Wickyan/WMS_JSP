@@ -1,7 +1,6 @@
 package com.briup.bean;
 
 public class Customer {
-	   private int id;
 	   private String account;
 	   private String password; 
 	   private String name;
@@ -10,18 +9,6 @@ public class Customer {
 	   private String phone;
 	   private String address;
 	   private String email;
-	/**
-	 * @return the id
-	 */
-	public int getId() {
-		return id;
-	}
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(int id) {
-		this.id = id;
-	}
 	/**
 	 * @return the account
 	 */
@@ -123,8 +110,8 @@ public class Customer {
 	 */
 	@Override
 	public String toString() {
-		return "Customer [id=" + id + ", account=" + account + ", password=" + password + ", name=" + name + ", sex="
-				+ sex + ", age=" + age + ", phone=" + phone + ", address=" + address + ", email=" + email + "]";
+		return "Customer  account=" + account + ", password=" + password + ", name=" + name + ", sex="
+				+ sex + ", age=" + age + ", phone=" + phone + ", address=" + address + ", email=" + email + " ";
 	}
 	   
 }

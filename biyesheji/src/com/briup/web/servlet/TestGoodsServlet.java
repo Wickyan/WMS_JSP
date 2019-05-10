@@ -24,7 +24,7 @@ public class TestGoodsServlet extends HttpServlet {
 	       request.setCharacterEncoding("UTF-8");
 	       response.setCharacterEncoding("UTF-8");
 	       Goods goods = new Goods();
-	       goods.setId(8);
+	       //goods.setId(8);
 	       goods.setName("铅笔");
 	       goods.setNum("45");
 	       goods.setPrice("2");

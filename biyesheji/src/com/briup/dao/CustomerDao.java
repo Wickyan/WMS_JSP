@@ -12,7 +12,7 @@ public interface CustomerDao {
 		//查找用户
 		List<Customer> findCustomerByName(String name) throws Exception;
 		
-		List<Customer> findCustomerById(int id) throws Exception;
+//		List<Customer> findCustomerById(int id) throws Exception;
 		
 		List<Customer> findAllCustomer() throws Exception;
 		
