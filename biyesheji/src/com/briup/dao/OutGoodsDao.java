@@ -11,5 +11,5 @@ public interface OutGoodsDao {
 	//查找用户
 	List<Goods> findOutGoodsByName(String name) throws Exception;
 	List<Goods> findOutGoods() throws Exception;
-	List<Goods> findOutGoodsById(String id) throws Exception;
+	List<Goods> findOutGoodsById(int id) throws Exception;
 }

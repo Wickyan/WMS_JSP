@@ -9,7 +9,7 @@
 		   select * from OutStock
 	</select>
 	 
-	<select id="selectOutGoodsById" parameterType="string" resultType="Goods">
+	<select id="selectOutGoodsById" parameterType="int" resultType="Goods">
 		select * from OutStock
 		where goodsid=#{goodsid}
 	</select>

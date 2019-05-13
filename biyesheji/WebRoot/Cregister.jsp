@@ -9,14 +9,82 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="description" content="仓库管理客户注册">
 		<title>仓库管理客户注册页面</title>
-		<LINK href="css/main.css" rel=stylesheet>
-		<script language = "JavaScript" src = "js/main.js"></script>
-		<script language = "JavaScript" src = "js/main.js"></script>
-		<c:if test="${message!=null }">
-			<script type="text/javascript">
-				alert("${message}");
-			</script>
-		</c:if>
+<LINK href="css/main.css" rel=stylesheet>
+<script src="https://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+<script src="https://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+<script src="https://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+<script>
+$.validator.setDefaults({
+    submitHandler: function() {
+     // alert("提交事件!");
+     submit();
+    }
+});
+$().ready(function() {
+	// 在键盘按下并释放及提交后验证提交表单
+	  $("#reg").validate({
+		    rules: {
+			    userid: {
+			        required: true,
+			        minlength: 3,
+			        maxlength: 15
+			     },
+			    password: {
+			    	required: true,
+			        minlength: 5,
+			        maxlength: 15
+			    },
+			    password2: {
+			        required: true,
+			        minlength: 5,
+			        equalTo: "#password"
+			    },
+			    name:"required",
+			    email: {
+			       
+			        email: true
+			    },
+			    sex:"required",
+			    age: {
+			    	digits:true,
+			    	required: true
+			    },
+			    phone:{
+			        maxlength: 15,
+			        digits:true,
+			    }
+		    },
+
+		    messages: {
+			    userid:{
+			        required: "请输入用户名",
+			        minlength: "用户名必需3-15个字符"
+			    },
+			    password: {
+			        required: "请输入密码",
+			        minlength: "密码长度不能小于 5 个字母"
+			    },
+			    password2: {
+			        required: "请输入密码",
+			        minlength: "密码长度不能小于 5 个字母",
+			        equalTo: "两次密码输入不一致"
+			    },
+			    name:"请输入姓名",
+			    email: "请输入正确的邮箱",
+			    sex: "请选择性别",
+			    age: {
+			    	required:"请输入年龄",
+			    	digits:"请输入整数年龄"
+			    },
+			}
+		});
+	});
+</script>
+<style>
+.error{
+	color:red;
+}
+</style>
 	</head>
 	<body onLoad="MM_preloadImages('images/index_on.gif','images/reg_on.gif','images/order_on.gif','../images/top/topxmas/jp_on.gif','../images/top/topxmas/download_on.gif','../images/top/topxmas/bbs_on.gif','../images/top/topxmas/designwz_on.gif')" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0">
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -37,7 +105,7 @@
 		</table>
               <br>
 
-<form method="post" name="reg" action="/biyesheji/CregisterServlet">
+<form method="post" name="reg" id ="reg" action="/biyesheji/CregisterServlet">
 	<table cellpadding="3" cellspacing="1" align="center" class="tableborder1" id="table1" bgcolor="#F0E4FF">
 		<tr>
 			<td valign="middle" colspan="2" align="center" height="25" color="#9999FF">
@@ -56,7 +124,7 @@
 			
 			</td>
 			<td width="60%" class="tablebody1">
-			<input type="password"  size="32" name="password" style="font-family: Tahoma,Verdana,宋体; font-size: 12px; line-height: 15px; color: #000000">
+			<input type="password"  size="32" name="password" id="password" style="font-family: Tahoma,Verdana,宋体; font-size: 12px; line-height: 15px; color: #000000">
 			<font color="#FF0000">*</font></td>
 		</tr>
 		<tr>
@@ -111,7 +179,7 @@
 		
 		<tr>
 			<td class="tablebody2" valign="middle" colspan="2" align="center">
-			<input type="button" value="注 册" onclick="javascript:checkReg()">&nbsp;&nbsp;&nbsp;<input type="reset" name="reset" value="清 除"></td>
+			<input type="submit" value="注 册" >&nbsp;&nbsp;&nbsp;<input type="reset" name="reset" value="清 除"></td>
 		</tr>
 	</table>
 </form>

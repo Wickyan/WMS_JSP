@@ -6,10 +6,10 @@
 		where name=#{name}
 	</select>
 	<select id="selectAllGoods" parameterType="Goods" resultType="Goods">
-		   select * from goods
+		   select * from goods  ORDER BY  goodsid
 	</select>
 	
-	<select id="selectGoodsById" parameterType="string" resultType="Goods">
+	<select id="selectGoodsById" parameterType="int" resultType="Goods">
 		select * from goods
 		where goodsid=#{goodsid}
 	</select>

@@ -8,30 +8,34 @@
 <link rel="stylesheet" type="text/css" href="css/test3.css">
 <script language = "JavaScript" src = "js/main.js"></script>
 </head>
-<body >
-   <div class="di">
-   <form method="post" name="Alogin" action="/biyesheji/CloginServlet">
-   <table>
-    <div class="d0">
-      <p align="center">客户登录</p></div>
-    <div class="d1">
-        <input name="cin_be" value="" placeholder="&nbsp&nbsp请输入客户帐号">
-      
-    </div>
-    <div class="d2"> 
-           <input name="cpass" type="password" value="" placeholder="&nbsp&nbsp请输入客户密码">
-    </div>
-    
-     <div class="d4"  >
-        <button class="but" type="submit" onclick="javascript:checkMe()">登录</button>  
-      </div>
-            </table>
-      <div class="d5">
-                  <span class="hui"></span>
-                   您还不是本中心客户请<a href="Cregister.jsp">点击立即注册 </a>  
-      </div>
-
-   </div>
+<body>
+	<div class="di">
+		<form method="post" name="Alogin" action="/biyesheji/CloginServlet">
+			<table>
+				<div class="d0">
+					<p align="center">客户登录</p>
+				</div>
+				
+				<div class="d1">
+					<input name="cin_be" value="" placeholder="&nbsp&nbsp请输入客户帐号">
+				</div>
+				
+				<div class="d2">
+					<input name="cpass" type="password" value="" placeholder="&nbsp&nbsp请输入客户密码">
+				</div>
+				
+				<div class="d4"  >
+					<button class="but" type="submit" onclick="javascript:checkMe()">登录</button>
+				</div>
+			</table>
+			
+			<div class="d5">
+				<span class="hui"></span>
+				 您还不是本中心客户？<a href="Cregister.jsp">点击立即注册 </a>
+			</div>
+			
+		</form>
+	</div>
    
 </body>
 </html>

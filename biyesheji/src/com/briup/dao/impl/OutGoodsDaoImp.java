@@ -15,7 +15,7 @@ public class OutGoodsDaoImp implements OutGoodsDao{
 	public void saveOutGoods(Goods goods) throws Exception {
 		// TODO Auto-generated method stub
 		SqlSession session = MybatisSessionFactory.getSession();
-		session.clearCache();
+//		session.clearCache();
 		OutGoodsMapper outGoodsMapper = session.getMapper(OutGoodsMapper.class);
 		outGoodsMapper.insertOutGoods(goods);
 	}
@@ -24,7 +24,7 @@ public class OutGoodsDaoImp implements OutGoodsDao{
 	public void updateOutGoods(Goods goods) throws Exception {
 		// TODO Auto-generated method stub
 		SqlSession session = MybatisSessionFactory.getSession();
-		session.clearCache();
+//		session.clearCache();
 		OutGoodsMapper outGoodsMapper = session.getMapper(OutGoodsMapper.class);
 		
 		
@@ -34,7 +34,7 @@ public class OutGoodsDaoImp implements OutGoodsDao{
 	public List<Goods> findOutGoodsByName(String name) throws Exception {
 		// TODO Auto-generated method stub
 		SqlSession session = MybatisSessionFactory.getSession();
-		session.clearCache();
+//		session.clearCache();
 		OutGoodsMapper outGoodsMapper = session.getMapper(OutGoodsMapper.class);
 		//outGoodsMapper.selectOutGoodsByName(name);
 		return outGoodsMapper.selectOutGoodsByName(name);
@@ -44,17 +44,17 @@ public class OutGoodsDaoImp implements OutGoodsDao{
 	public List<Goods> findOutGoods() throws Exception {
 		// TODO Auto-generated method stub
 		SqlSession session = MybatisSessionFactory.getSession();
-		session.clearCache();
+//		session.clearCache();
 		OutGoodsMapper outGoodsMapper = session.getMapper(OutGoodsMapper.class);
 		
 		return outGoodsMapper.selectAllOutGoods();
 	}
 
 	@Override
-	public List<Goods> findOutGoodsById(String id) throws Exception {
+	public List<Goods> findOutGoodsById(int id) throws Exception {
 		// TODO Auto-generated method stub
 		SqlSession session = MybatisSessionFactory.getSession();
-		session.clearCache();
+//		session.clearCache();
 		OutGoodsMapper outGoodsMapper = session.getMapper(OutGoodsMapper.class);
 		
 		return outGoodsMapper.selectOutGoodsById(id);

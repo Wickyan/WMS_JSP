@@ -7,9 +7,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="css/test3.css">
 
-<title>管理员信息表</title>
+
+
+<title>管理员控制台</title>
 </head>
-<body bgcolor="">
+<body background="images/cangku.jpg" style=" background-repeat:no-repeat ;background-size:100% 100%;background-attachment: fixed;">
+
 <%   String account = (String)session.getAttribute("account"); 
      Admin admin = (Admin)session.getAttribute("Admin");
      session.setAttribute("admin", admin);
@@ -32,7 +35,7 @@
 <a href="AddGoods.jsp?admin=<%=admin%>"><img  src="images/ruku.png" width="140px" height="140px"></a>
 <a href="CSInf.jsp?admin=<%=admin%>"><img  src="images/kehu.png" width="140px" height="140px"></a>
 <a href="AFirstLog.jsp"><img  src="images/shouye.png" width="140px" height="140px"></a>
-<a href="Alogin.jsp"><img  src="images/tuichu.png" width="140px" height="140px"></a>
+<a href="logout.do"><img  src="images/tuichu.png" width="140px" height="140px"></a>
 </div> 
 </body>
 </html>

@@ -9,7 +9,7 @@ import com.briup.common.MybatisSessionFactory;
 import com.briup.dao.AdminDao;
 
 public class AdminDaoImp implements AdminDao {
-	SqlSession session = MybatisSessionFactory.getSession();
+	
 	public AdminDaoImp() {
 		// TODO Auto-generated constructor stub
 	}
@@ -18,7 +18,7 @@ public class AdminDaoImp implements AdminDao {
 	public void saveAdmin(Admin admin) throws Exception {
 		// TODO Auto-generated method stub
 		
-		session.clearCache();
+		SqlSession session = MybatisSessionFactory.getSession();
 		AdminMapper adminMapper = session.getMapper(AdminMapper.class);
 		adminMapper.insertAdmin(admin);
 		/*session.commit();
@@ -28,7 +28,8 @@ public class AdminDaoImp implements AdminDao {
 	@Override
 	public void updateAdmin(Admin admin) throws Exception{
 		// TODO Auto-generated method stub
-		session.clearCache();
+		//session.clearCache();session.clearCache();session.clearCache();
+		SqlSession session = MybatisSessionFactory.getSession();
 		AdminMapper adminMapper = session.getMapper(AdminMapper.class);
 		adminMapper.updateAdmin(admin);
 	}
@@ -37,7 +38,8 @@ public class AdminDaoImp implements AdminDao {
 	public List<Admin> findAdminByName(String name) throws Exception {
 		// TODO Auto-generated method stub
 		
-		session.clearCache();
+//		session.clearCache();session.clearCache();session.clearCache();
+		SqlSession session = MybatisSessionFactory.getSession();
 		AdminMapper adminMapper = session.getMapper(AdminMapper.class);
 		List<Admin> admin= adminMapper.selectAdminByName(name);
 		/*session.commit();

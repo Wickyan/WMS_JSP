@@ -26,10 +26,10 @@ public class TestGoodsServlet extends HttpServlet {
 	       Goods goods = new Goods();
 	       //goods.setId(8);
 	       goods.setName("铅笔");
-	       goods.setNum("45");
+	       goods.setNum(45);
 	       goods.setPrice("2");
 	       goods.setSort("学习用品");
-	       goods.setGoodsid("223421");
+	       goods.setGoodsid(223421);
 	       goods.setAddress("2B");
 	       System.out.println("goods:"+goods);
 	       GoodsDaoImp goodsDaoImp = new GoodsDaoImp();

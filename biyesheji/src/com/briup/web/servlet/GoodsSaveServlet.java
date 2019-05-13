@@ -24,10 +24,10 @@ public class GoodsSaveServlet extends HttpServlet {
 	        response.setCharacterEncoding("UTF-8");
 	        String name= request.getParameter("goods"); 
 	        String address= request.getParameter("address"); 
-	        String goodsid= request.getParameter("goodsid"); 
+	        int goodsid= Integer.parseInt(request.getParameter("goodsid")); 
 	        String price= request.getParameter("price"); 
 	        String sort= request.getParameter("sort"); 
-	        String num= request.getParameter("num"); 
+	        int num= Integer.parseInt(request.getParameter("num")); 
 	        Goods goods = new Goods();
 	        goods.setGoodsid(goodsid);
 	        goods.setName(name);

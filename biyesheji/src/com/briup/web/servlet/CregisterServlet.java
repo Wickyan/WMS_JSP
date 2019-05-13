@@ -54,7 +54,7 @@ public class CregisterServlet extends HttpServlet {
 					 customerDao.saveCustomer(customer);;
 					 sqlSession.commit();
 					 //sqlSession.close();
-					 response.sendRedirect("ARsucess.jsp");
+					 response.sendRedirect("CRsucess.jsp");
 					 throw new AdminServiceException("保存成功！");
 					}else{
 						sqlSession.commit();

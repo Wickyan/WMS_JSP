@@ -41,7 +41,7 @@ public class OutGoodsServlet extends HttpServlet {
 	      GoodsDaoImp goodsDaoImp = new GoodsDaoImp();
 	      OutGoodsDaoImp outGoodsDaoImp = new OutGoodsDaoImp();
 	      for(Goods goods2:goods){
-	    	  String GoodsNum =  goods2.getNum();
+	    	  int GoodsNum =  goods2.getNum();
 	    	  System.out.println("goods2值为:"+goods2);
 	    	  Integer IntGoodsNum = Integer.valueOf(GoodsNum);
 	    	  Goods goods3 = goods2;
@@ -50,12 +50,12 @@ public class OutGoodsServlet extends HttpServlet {
 	    		 System.out.println("出库数量不足！");
 				response.sendRedirect("OutStockFail.jsp");
 			   }else{
-				goods2.setNum(String.valueOf(IntGoodsNum-IntOutNum));
+				goods2.setNum(IntGoodsNum-IntOutNum);
 				try {
 					//goods3.setNum(String.valueOf(IntOutNum));
 					goodsDaoImp.updateGoods(goods2);
 					sqlSession.commit();
-					goods3.setNum(String.valueOf(IntOutNum));
+					goods3.setNum(IntOutNum);
 					outGoodsDaoImp.saveOutGoods(goods3);
 					sqlSession.commit();
 				} catch (Exception e) {

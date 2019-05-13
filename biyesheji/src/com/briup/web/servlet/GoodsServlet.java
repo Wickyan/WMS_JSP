@@ -18,7 +18,7 @@ public class GoodsServlet extends HttpServlet {
    	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    request.setCharacterEncoding("UTF-8");
 	    response.setCharacterEncoding("UTF-8");
-	    //System.out.println(request.getAttribute("gname")); 
+	    
    		
    	}
 protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

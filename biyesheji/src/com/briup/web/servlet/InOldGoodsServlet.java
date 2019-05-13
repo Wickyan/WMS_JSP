@@ -39,7 +39,7 @@ public class InOldGoodsServlet extends HttpServlet {
 	      //System.out.println("OutNum : " + OutNum);
 	      GoodsDaoImp goodsDaoImp = new GoodsDaoImp();
 	      for(Goods goods2:goods){
-	    	  String GoodsNum =  goods2.getNum();
+	    	  int GoodsNum =  goods2.getNum();
 	    	  System.out.println("goods2值为:"+goods2);
 	    	  Integer IntGoodsNum = Integer.valueOf(GoodsNum);
 	    	  System.out.println("IntGoodsNum :"+IntGoodsNum);
@@ -47,7 +47,7 @@ public class InOldGoodsServlet extends HttpServlet {
 	    		 System.out.println("入库数量不足！");
 				response.sendRedirect("AddGoodsFail.jsp");
 			   }else{
-				goods2.setNum(String.valueOf(IntGoodsNum+IntInNum));
+				goods2.setNum(IntGoodsNum+IntInNum);
 				try {
 					goodsDaoImp.updateGoods(goods2);
 					sqlSession.commit();

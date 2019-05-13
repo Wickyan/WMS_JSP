@@ -14,7 +14,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 			<transactionManager type="JDBC"></transactionManager>
 			<dataSource type="POOLED">
 				<property name="driver" value="com.mysql.jdbc.Driver"/>
-				<property name="url" value="jdbc:mysql://localhost:3306/mvs"/>
+				<property name="url" value="jdbc:mysql://localhost:3306/mvs_2"/>
 				<property name="username" value="root"/>
 				<property name="password" value="12345"/>
 			</dataSource>

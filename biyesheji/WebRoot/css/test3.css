@@ -135,4 +135,9 @@ button{
 	text-align: center;
 	font-weight: bold;
 }
+body[name="qqqq"]{
+	 background="images/cangku.jpg" 
+	 ackground-repeat:no-repeat
+	}
+
 </style>

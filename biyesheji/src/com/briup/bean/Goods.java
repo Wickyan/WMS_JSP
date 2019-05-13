@@ -2,20 +2,20 @@ package com.briup.bean;
 public class Goods {
      private String name;
      private String address;
-     private String num;
+     private int num;
      private String sort;
      private String price;
-     private String goodsid;
+     private int goodsid;
      /**
  	 * @return the goodsid
  	 */
- 	public String getGoodsid() {
+ 	public int getGoodsid() {
  		return goodsid;
  	}
  	/**
  	 * @param goodsid the goodsid to set
  	 */
- 	public void setGoodsid(String goodsid) {
+ 	public void setGoodsid(int goodsid) {
  		this.goodsid = goodsid;
  	}
 	/**
@@ -46,13 +46,13 @@ public class Goods {
 	/**
 	 * @return the number
 	 */
-	public String getNum() {
+	public int getNum() {
 		return num;
 	}
 	/**
 	 * @param number the number to set
 	 */
-	public void setNum(String num) {
+	public void setNum(int num) {
 		this.num = num;
 	}
 	/**

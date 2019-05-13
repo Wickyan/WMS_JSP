@@ -6,6 +6,6 @@ public interface OutGoodsMapper {
 	void insertOutGoods(Goods a);
 	List<Goods> selectOutGoodsByName(String name);
 	List<Goods> selectAllOutGoods();
-	List<Goods> selectOutGoodsById(String id);
+	List<Goods> selectOutGoodsById(int id);
 	void updateOutGoods(Goods goods);
 }
