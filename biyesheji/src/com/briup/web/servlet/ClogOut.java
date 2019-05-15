@@ -9,24 +9,19 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class LogoutServlet
+ * Servlet implementation class ClogOut
  */
-@WebServlet("/logout.do")
-public class LogoutServlet extends HttpServlet {
+@WebServlet("/ClogOut")
+public class ClogOut extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    
-    public LogoutServlet() {
-        super();
-    }
-
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		session.removeAttribute("admin");
 
-		session.removeAttribute("Admin");
-		session.removeAttribute("account");
+		session.removeAttribute("caccount");
+		session.removeAttribute("customer");
 		session.invalidate();
-		request.getRequestDispatcher("Alogin.jsp").forward(request, response);
+		request.getRequestDispatcher("Clogin.jsp").forward(request, response);
 	}
 
 }

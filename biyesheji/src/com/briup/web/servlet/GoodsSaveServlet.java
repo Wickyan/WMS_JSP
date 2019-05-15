@@ -36,7 +36,7 @@ public class GoodsSaveServlet extends HttpServlet {
 	        goods.setSort(sort);
 	        goods.setNum(num);
 	        System.out.println("入库名称为："+name+goodsid+address+price+sort+num+goods);
-	        SqlSession sqlSession = MybatisSessionFactory.getSession();
+	        //SqlSession sqlSession = MybatisSessionFactory.getSession();
 	        GoodsDaoImp goodsDaoImp = new GoodsDaoImp();
 	        try {
 				List<Goods> fGoods = goodsDaoImp.findGoodsByName(name);
@@ -47,7 +47,7 @@ public class GoodsSaveServlet extends HttpServlet {
 				//System.out.println("所有结果："+aGoods);
 				if (fGoods.size()==0 && fGoodsid.size()==0) { 
 					goodsDaoImp.saveGoods(goods);
-					sqlSession.commit();
+					//sqlSession.commit();
 					response.sendRedirect("AddGoods.jsp");
 					//session.close();
 				}else{

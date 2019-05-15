@@ -49,7 +49,8 @@ public class CInfServlet extends HttpServlet {
 			try {
 				customerDaoImp.updateCustomer(customer);
 				sqlSession.commit();
-				//response.sendRedirect("ACInf.jsp");
+
+				//System.out.println(customer.toString());
 				session.setAttribute("customer",customer);
 				response.sendRedirect("CInf.jsp");
 			} catch (Exception e) {

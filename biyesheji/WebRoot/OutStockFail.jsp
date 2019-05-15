@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="Goods.jsp">库存不足请输入正确数量</a>
+<a href="javascript:window.history.back()">库存不足请输入正确数量</a>  
 </body>
 </html>

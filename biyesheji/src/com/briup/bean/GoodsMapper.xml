@@ -22,9 +22,18 @@
 		</selectKey>
 		-->
 	  insert into goods values(#{name},#{address},#{num},#{goodsid},#{sort},#{price})
-	</insert>
-	<update id="updateGoods" parameterType="Goods"> 
+	</insert> 
+	
+	<update id="updateGoods" parameterType="Goods" > 
 			update goods set num=#{num}
 			where goodsid=#{goodsid} 
 	</update> 
+	
+	<update id="updateGoodsAll" parameterType="Goods" > 
+			update goods set name=#{name}, num=#{num},  sort=#{sort},  address=#{address},  price=#{price}
+			where goodsid=#{goodsid} 
+	</update> 
+	<delete id="deleteGoods" parameterType="Goods">
+ 			 delete from goods where goodsid = #{goodsid}
+	</delete>
 </mapper>

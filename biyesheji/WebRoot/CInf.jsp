@@ -12,10 +12,94 @@
 		<meta name="description" content="客户信息">
 		<title>客户信息页面</title>
 		<LINK href="css/main.css" rel=stylesheet>
-		<script language = "JavaScript" src = "js/main.js"></script>
-		<script language = "JavaScript" src = "js/main.js"></script>
+		
+<script src="https://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+<script src="https://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+<script src="https://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+ 
+<script>
+
+$.validator.setDefaults({
+    submitHandler: function() {
+    	if(confirm("是否修改？")) {
+    		submit();
+    	}
+     // alert("提交事件!");
+    	
+    }
+});
+$().ready(function() {
+	// 在键盘按下并释放及提交后验证提交表单
+	  $("#regAInf").validate({
+		  rules: {
+			    userid: {
+			        required: true,
+			        minlength: 3,
+			        maxlength: 15
+			     },
+			    password: {
+			    	required: true,
+			        minlength: 5,
+			        maxlength: 15
+			    },
+			    password2: {
+			        required: true,
+			        minlength: 5,
+			        equalTo: "#password"
+			    },
+			    name:"required",
+			    email: {
+			       
+			        email: true
+			    },
+			    sex:"required",
+			    age: {
+			    	digits:true,
+			    	required: true
+			    },
+			    phone:{
+			        maxlength: 15,
+			        digits:true,
+			    }
+		    },
+
+		    messages: {
+			    userid:{
+			        required: "请输入用户名",
+			        minlength: "用户名必需3-15个字符"
+			    },
+			    password: {
+			        required: "请输入密码",
+			        minlength: "密码长度不能小于 5 个字母"
+			    },
+			    password2: {
+			        required: "请输入密码",
+			        minlength: "密码长度不能小于 5 个字母",
+			        equalTo: "两次密码输入不一致"
+			    },
+			    name:"请输入姓名",
+			    email: "请输入正确的邮箱",
+			    sex: "请选择性别",
+			    age: {
+			    	required:"请输入年龄",
+			    	digits:"请输入整数年龄"
+			    },
+			}
+		});
+	});
+</script>
+<style>
+.error{
+	color:red;
+}
+</style>
+
+
+
 	</head>
 	<body onLoad="MM_preloadImages('images/index_on.gif','images/reg_on.gif','images/order_on.gif','../images/top/topxmas/jp_on.gif','../images/top/topxmas/download_on.gif','../images/top/topxmas/bbs_on.gif','../images/top/topxmas/designwz_on.gif')" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0">
+	
+	
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 		  <tr>
 		      <table width="100" border="0" cellspacing="0" cellpadding="0" align="center">
@@ -37,10 +121,12 @@
               <br>
               <% 
                  Customer customer =(Customer) session.getAttribute("customer");
-                 //Customer customer2 =(Customer) request.getAttribute("customer");
-                 //out.println("AInf的admin的值"+admin);
+              if(customer  == null){
+      	     	System.out.println("没登录呢");
+      	    	  %><jsp:forward page='Clogin.jsp'/><% 
+      	      }
               %>
-<form method="post" name="regAInf" action="CInfServlet">
+<form method="post" name="regAInf" id ="regAInf" action="CInfServlet">
 	<table   cellpadding="3" cellspacing="1" align="center" class="tableborder3" id="table1">
 		<tr>
 			<td valign="middle" colspan="2" align="center" height="25" color="#9999FF">
@@ -106,7 +192,7 @@
 		
 		<tr>
 			<td class="tablebody2" valign="middle" colspan="2" align="center">
-			<input type="submit" value="修 改" onclick="javascript:checkAInfReg()">&nbsp;&nbsp;&nbsp;<input type="reset" name="reset" value="重置"></td>
+			<input type="submit" value="修 改">&nbsp;&nbsp;&nbsp;<input type="reset" name="reset" value="重置"></td>
 		</tr>
 	</table>
 </form>

@@ -19,8 +19,12 @@ public class AdminDaoImp implements AdminDao {
 		// TODO Auto-generated method stub
 		
 		SqlSession session = MybatisSessionFactory.getSession();
+		session.clearCache();session.clearCache();session.clearCache();
 		AdminMapper adminMapper = session.getMapper(AdminMapper.class);
 		adminMapper.insertAdmin(admin);
+		//session.close();
+		session.commit();
+
 		/*session.commit();
 		session.close();*/
 	}
@@ -28,22 +32,25 @@ public class AdminDaoImp implements AdminDao {
 	@Override
 	public void updateAdmin(Admin admin) throws Exception{
 		// TODO Auto-generated method stub
-		//session.clearCache();session.clearCache();session.clearCache();
 		SqlSession session = MybatisSessionFactory.getSession();
+		session.clearCache();session.clearCache();session.clearCache();
 		AdminMapper adminMapper = session.getMapper(AdminMapper.class);
 		adminMapper.updateAdmin(admin);
+		session.commit();
+
+		//session.close();
 	}
 
 	@Override
 	public List<Admin> findAdminByName(String name) throws Exception {
 		// TODO Auto-generated method stub
-		
-//		session.clearCache();session.clearCache();session.clearCache();
 		SqlSession session = MybatisSessionFactory.getSession();
+		session.clearCache();session.clearCache();session.clearCache();
 		AdminMapper adminMapper = session.getMapper(AdminMapper.class);
 		List<Admin> admin= adminMapper.selectAdminByName(name);
 		/*session.commit();
 		session.close();*/
+		//session.close();
 		return admin;
 	}
 

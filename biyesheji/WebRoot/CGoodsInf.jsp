@@ -1,10 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="com.briup.bean.Goods" %>
+<%@page import="com.briup.bean.Customer"%>
+<%@page import="com.briup.bean.Admin"%>
 <%@ page import="java.util.*" %>
 <%@ page import="java.util.List" %>    
 <%@ page import="com.briup.dao.impl.GoodsDaoImp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<sql:setDataSource driver="com.mysql.jdbc.Driver" user="root" password="12345" url="jdbc:mysql://localhost:3306/mvs_2"/>
+<sql:query var="goodslist" sql="SELECT * FROM goods ORDER BY  goodsid"></sql:query>   
+
+
 <!--文件头开始-->
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -18,6 +27,15 @@
 		<script language = "JavaScript" src = "js/main.js"></script>
 	</head>
 	<body onLoad="MM_preloadImages('images/index_on.gif','images/reg_on.gif','images/order_on.gif','../images/top/topxmas/jp_on.gif','../images/top/topxmas/download_on.gif','../images/top/topxmas/bbs_on.gif','../images/top/topxmas/designwz_on.gif')" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0">
+	
+<% 
+                 Customer customer =(Customer) session.getAttribute("customer");
+              if(customer  == null){
+      	     	System.out.println("没登录呢");
+      	    	  %><jsp:forward page='Clogin.jsp'/><% 
+      	      }
+              %>
+	
 		<div class="">
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 		  <tr>
@@ -33,16 +51,18 @@
            <br>
 <table cellspacing=1 cellpadding=3 align=center class=tableBorder2>
 		<tr>
-		    <td height=25 width="100px" valign=middle bgcolor="#E4F3FF" align="center">
-                     <a href="CFirstLog.jsp">返回首页</a>
+		    <td height=25 valign=middle bgcolor="#E4F3FF" align="center">
+                   <b><a href="CFirstLog.jsp">返回首页</a></b>
             </td>
 		    <td height=25 valign=middle bgcolor="#E4F3FF" align="center">
                    <b>商品信息库存如下！</b>
             </td>
+            
          </tr>
 		</table>
               <br>
-<form method="post" name="reg" action="OutStock.jsp">
+<form method="post" name="reg" action="">
+    
 	<table cellpadding="3" cellspacing="1" align="center" class="tableborder3" id="table1">
 		<tr>
 			<td valign="middle" colspan="2" align="center" height="25" color="#9999FF">
@@ -56,16 +76,11 @@
 			</td><td width="10%" class="tablebody1" align="center"><b>生产厂商</b>
 			</td><td width="10%" class="tablebody1" align="center"><b>商品类别</b>
 			</td><td width="10%" class="tablebody1" align="center"><b>商品价格</b>
-			</td>
+			
 		</tr>
-		<%  
-		   GoodsDaoImp goodsDaoImp = new GoodsDaoImp();
-		   List<Goods> list = goodsDaoImp.findGoods();		  
-		   session.setAttribute("list", list);
-		   //out.println(list);
-		%>
 		
-		<c:forEach items="${sessionScope.list}" var="goods" begin="0"  varStatus="stusts">
+		
+		<c:forEach items="${goodslist.rows}" var="goods" begin="0"  varStatus="stusts">
 		<tr>    
 		   	     <td width="10%" class="tablebody1" align="center">${stusts.index}
 			</td><td width="10%" class="tablebody1" align="center">${goods.name}
@@ -74,7 +89,6 @@
 			</td><td width="10%" class="tablebody1" align="center">${goods.address}
 			</td><td width="10%" class="tablebody1" align="center">${goods.sort}
 			</td><td width="10%" class="tablebody1" align="center">${goods.price}
-			</td>
 		</tr>
 		</c:forEach>
 			</table>

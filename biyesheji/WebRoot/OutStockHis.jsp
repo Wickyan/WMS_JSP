@@ -19,6 +19,16 @@
 		<script language = "JavaScript" src = "js/main.js"></script>
 	</head>
 	<body onLoad="MM_preloadImages('images/index_on.gif','images/reg_on.gif','images/order_on.gif','../images/top/topxmas/jp_on.gif','../images/top/topxmas/download_on.gif','../images/top/topxmas/bbs_on.gif','../images/top/topxmas/designwz_on.gif')" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0">
+	
+	
+	<%@page import="com.briup.bean.Admin"%>
+	<%  
+     Admin admin = (Admin)session.getAttribute("Admin");
+      if(admin  == null){
+    	System.out.println("没登录呢");
+    	  %><jsp:forward page='Alogin.jsp'/><% 
+      }
+%>
 		<div class="">
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 		  <tr>
@@ -60,7 +70,7 @@
 		<%  
 		   OutGoodsDaoImp outgoodsDaoImp = new OutGoodsDaoImp();
 		   List<Goods> list = outgoodsDaoImp.findOutGoods();		  
-		   session.setAttribute("list", list);
+		   session.setAttribute("goodslist", list);
 		   //out.println(list);
 		%>
 		

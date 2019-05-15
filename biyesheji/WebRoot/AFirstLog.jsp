@@ -5,37 +5,49 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="css/test3.css">
-
-
-
 <title>管理员控制台</title>
+<style type="text/css">
+	.flex{display: flex;margin: 5% 10% 10% 10%;}
+	#letf{width: 50%;height: 100%;}
+	#right{width: 50%;height:100%;}
+	.flex-item1{display: flex;flex-wrap: wrap;padding-top:30%;}
+	.flex-item {width:50%;height: 100%;padding-top: 10%;}
+	a{color:#00801A; font-family: '华文新魏', cursive;font-size:2em}
+</style>
+<link href="https://cdn.bootcss.com/font-awesome/5.8.0/css/all.css" rel="stylesheet" />	
+<link href="https://fonts.googleapis.com/css?family=Pacifico|Sofia" rel="stylesheet">
 </head>
-<body background="images/cangku.jpg" style=" background-repeat:no-repeat ;background-size:100% 100%;background-attachment: fixed;">
 
-<%   String account = (String)session.getAttribute("account"); 
+<body background="images/2.png" style="background-repeat: no-repeat;background-size:100% auto">
+<%   
      Admin admin = (Admin)session.getAttribute("Admin");
-     session.setAttribute("admin", admin);
-      //out.println(account);
-      //out.println("AFirstLog的Admin值："+admin);
+      if(admin  == null){
+    	System.out.println("没登录呢");
+    	  %><jsp:forward page='Alogin.jsp'/><% 
+      }
 %>
-<img  src="images/churuku.png" width="300px" height="75px">
-<table cellspacing="1" cellpadding="3" align="center" border="0" width="98%">
-		<tr>
-		<td width="65%"><BR>
-		欢迎您<%=account %>，进入管理员界面！ </td>
-		<td width="35%" align="right">
-		</td></tr></table>
-   
-<div class="f2" >
+欢迎管理员：<%=admin.getAccount() %>
+<div class="flex">
+<div id="letf">
+	<div align="center"> <img src="images/logo.png" alt=""></div>
+	<div align="center" style="padding-top: 10%"> <img src="images/1.png" alt=""></div>
+</div>
+<div id="right">
+	
+	<div class="flex-item1" >	
+	<div class="flex-item" align="center"><i class="fa fas fa-paint-brush">&nbsp;<a href="AInf.jsp">修改信息</a></i></div>	
+	<div class="flex-item" align="center"><i class="fa fas fa-paint-brush">&nbsp;<a href="logout.do">退出登录</a></i></div>	
+	<div class="flex-item" align="center"><i class="fa fas fa-paint-brush">&nbsp;<a href="CSInf.jsp">查看用户</a></i></div>	
+	<div class="flex-item" align="center"><i class="fa fas fa-paint-brush">&nbsp;<a href="GoodsInf.jsp">查看库存</a></i></div>	
+	<div class="flex-item" align="center"><i class="fa fas fa-paint-brush">&nbsp;<a href="AddGoods.jsp">入库</a></i></div>	
+	<div class="flex-item" align="center"><i class="fa fas fa-paint-brush">&nbsp;<a href="Goods.jsp">出库</a></i></div>	
+	</div>	
 
-<a href="AInf.jsp?admin=<%=admin%>" ><img  src="images/guanliyuan.png" width="200px" height="200px"></a>
-<a href="GoodsInf.jsp?admin=<%=admin%>"><img  src="images/chaxun.png" width="200px" height="200px"></a>
-<a href="Goods.jsp?admin=<%=admin%>"><img  src="images/chuku.png" width="200px" height="200px"></a><br>
-<a href="AddGoods.jsp?admin=<%=admin%>"><img  src="images/ruku.png" width="140px" height="140px"></a>
-<a href="CSInf.jsp?admin=<%=admin%>"><img  src="images/kehu.png" width="140px" height="140px"></a>
-<a href="AFirstLog.jsp"><img  src="images/shouye.png" width="140px" height="140px"></a>
-<a href="logout.do"><img  src="images/tuichu.png" width="140px" height="140px"></a>
-</div> 
+</div>
+
+
+</div>
+
 </body>
+
 </html>

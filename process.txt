@@ -1,0 +1,47 @@
+
+
+mybatis半自动，轻量级框架
+sql由配置文件进行配置
+剩下的预编译、设置参事、执行sql、封装结果 都由mybatis实现
+
+Q:输入数据的合法性由前端保证还是后端验证？
+A:
+
+Q:	Oracle 的 sequence
+A:	直接删除id number字段
+
+
+Q:	mysql 错误提示1366 Incorrect string value
+A:	my.ini << default-character-set=gbk 	--修改字符集(注意有三个地方)
+		set names gbk;						--将表的字符格式转为gbk
+		alter table tbname convert to charset gbk;	--将已有的字符格式转为gbk
+
+
+Q:	The valid characters are defined in RFC 7230 and RFC 3986 
+	tomcat 8.0以后对请求URL做了严格的过滤
+A:	删掉java beam里面ToString() 的 "[" 和 "]"
+
+
+ToDo：
+	增√删×改查√
+	[√]JQuery validator 所有页面
+	[√]解决数据库震荡的bug
+	[√]解决用户信息修改不生效的bug
+	[×]密码加密 [√]（尽量修改为post请求）
+	[√]将所有请求改为post
+	[×]修改前端初次登录界面
+	
+	[√]4.管理员信息页面要写获取数据库的信息（前一个<a>的页面只要写name传递即可）
+		ps：查看客户信息界面怎么刷新的
+	[√]5.java.lang.NoSuchMethodError: com.briup.dao.impl.GoodsDaoImp.findGoodsById（）；
+	[√]6.在查看界面后面写上[修改]
+	[×]7.CSInfo 管理员能修改用户密码
+	[√]8.补全CRsuccess.jsp等页面(自动跳转）
+	
+	
+0514ToDO：
+	[√]在update.java 里面获取goodslist2 将商品名设置成不可修改
+	[√]确认删除商品，确认修改信息，确认出库
+	[√]验证是否登录
+	[×]修改密码界面 确认修改密码
+	[√]出库不合法返回

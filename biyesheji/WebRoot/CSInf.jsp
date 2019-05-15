@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@page import="com.briup.bean.Admin"%>
 <%@ page import="com.briup.bean.Customer" %>
 <%@ page import="java.util.*" %>
 <%@ page import="java.util.List" %>    
@@ -18,6 +19,15 @@
 		<script language = "JavaScript" src = "js/main.js"></script>
 	</head>
 	<body onLoad="MM_preloadImages('images/index_on.gif','images/reg_on.gif','images/order_on.gif','../images/top/topxmas/jp_on.gif','../images/top/topxmas/download_on.gif','../images/top/topxmas/bbs_on.gif','../images/top/topxmas/designwz_on.gif')" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0">
+	
+<%   
+     Admin admin = (Admin)session.getAttribute("Admin");
+      if(admin  == null){
+  		System.out.println("没登录呢");
+    	%><jsp:forward page='Alogin.jsp'/><% 
+      }
+%>
+
 		<div class="">
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 		  <tr>
@@ -42,7 +52,6 @@
          </tr>
 		</table>
               <br>
-<form method="post" name="reg" action="OutStock.jsp">
 	<table cellpadding="3" cellspacing="1" align="center" class="tableborder3" id="table1">
 		<tr>
 			<td valign="middle" colspan="2" align="center" height="25" color="#9999FF">
@@ -87,7 +96,6 @@
 			</table>
 			
 	</div>
-</form>
 
 	</body>
 </html>

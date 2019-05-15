@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="AddGoods.jsp">商品存在！重新入库！</a>
+<a href="javascript:window.history.back()">商品的名称或者编号已经存在！请重新入库！</a>  
+
 </body>
 </html>

@@ -22,8 +22,9 @@
 <script>
 $.validator.setDefaults({
     submitHandler: function() {
-     // alert("提交事件!");
-     submit();
+    	if(confirm("确认出库？")) {
+    		submit();
+    	}
     }
 });
 $().ready(function() {
@@ -33,6 +34,7 @@ $().ready(function() {
 		    	Outnum: {
 			        required: true,
 			        digits:true,
+			        max:10;
 			     }
 		    },
 
@@ -52,6 +54,14 @@ $().ready(function() {
 </style>
 	</head>
 	<body onLoad="MM_preloadImages('images/index_on.gif','images/reg_on.gif','images/order_on.gif','../images/top/topxmas/jp_on.gif','../images/top/topxmas/download_on.gif','../images/top/topxmas/bbs_on.gif','../images/top/topxmas/designwz_on.gif')" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0">
+<%@page import="com.briup.bean.Admin"%>
+	<%  
+     Admin admin = (Admin)session.getAttribute("Admin");
+      if(admin  == null){
+    	System.out.println("没登录呢");
+    	  %><jsp:forward page='Alogin.jsp'/><% 
+      }
+%>
 		<div class="">
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 		  <tr>
@@ -74,7 +84,7 @@ $().ready(function() {
               <br>
 <form method="post" name="regout" id="regout" action="/biyesheji/OutGoodsServlet">
     <%
-          String goodsid = request.getParameter("goodsid");
+          int goodsid = Integer.parseInt(request.getParameter("goodsid"));
           session.setAttribute("goodsid", goodsid);
           GoodsDaoImp goodsDaoImp = new GoodsDaoImp();
 	      List<Goods> goodslist = goodsDaoImp.findGoodsById(goodsid);
@@ -137,7 +147,6 @@ $().ready(function() {
 		</tr>
 		</c:forEach>
 	</table>
-	</div>
 </form>
 	</body>
 </html>

@@ -17,8 +17,9 @@
 <script>
 $.validator.setDefaults({
     submitHandler: function() {
-      alert("提交事件!");
-     submit();
+    	if(confirm("是否修改？")) {
+    		submit();
+    	}
     }
 });
 $().ready(function() {
@@ -88,6 +89,8 @@ $().ready(function() {
 </style>
 </head>
 	<body onLoad="MM_preloadImages('images/index_on.gif','images/reg_on.gif','images/order_on.gif','../images/top/topxmas/jp_on.gif','../images/top/topxmas/download_on.gif','../images/top/topxmas/bbs_on.gif','../images/top/topxmas/designwz_on.gif')" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0">
+	
+
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 		  <tr>
 		      <table width="100" border="0" cellspacing="0" cellpadding="0" align="center">
@@ -109,8 +112,11 @@ $().ready(function() {
 		<br>
               
               <% 
-                 Admin admin =(Admin) session.getAttribute("admin"); 
-                 //out.println("AInf的admin的值"+admin);
+               Admin admin = (Admin)session.getAttribute("Admin");
+                if(admin  == null){
+              	System.out.println("没登录呢");
+              	  %><jsp:forward page='Alogin.jsp'/><% 
+                }
               %>
               
 <form method="post" name="regAInf" id="regAInf" action="AInfServlet">

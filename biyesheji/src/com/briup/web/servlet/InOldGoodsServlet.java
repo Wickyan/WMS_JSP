@@ -26,40 +26,34 @@ public class InOldGoodsServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 	      response.setCharacterEncoding("UTF-8");
+	      
 	      HttpSession  session = request.getSession();
-	      SqlSession sqlSession = MybatisSessionFactory.getSession();
-	      List<Goods> goods =  (List<Goods>) session.getAttribute("goodslist"); 
-	      System.out.println("session:"+session.getAttribute("goodsid"));
-	      System.out.println("OutGoodsServlet:"+session.getAttribute("goodslist"));
-	      //System.out.println("货物数量"+((Goods) goods).getNum());
-	      System.out.println("goods : " + goods);
+	      
 	      String InNum =  request.getParameter("Innum");
-	      Integer IntInNum = Integer.valueOf(InNum);
-	      System.out.println("IntOutNum:"+IntInNum);
-	      //System.out.println("OutNum : " + OutNum);
+	      Integer IntInNum = Integer.valueOf(InNum);//获取的增加数量
+	      System.out.println("增加的数量：" + IntInNum);
+
 	      GoodsDaoImp goodsDaoImp = new GoodsDaoImp();
-	      for(Goods goods2:goods){
-	    	  int GoodsNum =  goods2.getNum();
-	    	  System.out.println("goods2值为:"+goods2);
-	    	  Integer IntGoodsNum = Integer.valueOf(GoodsNum);
-	    	  System.out.println("IntGoodsNum :"+IntGoodsNum);
-	    	  if (IntInNum<0) {
-	    		 System.out.println("入库数量不足！");
-				response.sendRedirect("AddGoodsFail.jsp");
-			   }else{
-				goods2.setNum(IntGoodsNum+IntInNum);
-				try {
-					goodsDaoImp.updateGoods(goods2);
-					sqlSession.commit();
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				response.sendRedirect("AddGoods.jsp"); 
-				System.out.println("入库成功！");
-			   }  
-	      }   
-	}
+	      int goodsid = Integer.parseInt(session.getAttribute("goodsid").toString());
+	      try {
+			List<Goods> goodslist = goodsDaoImp.findGoodsById(goodsid);
+			for (Goods goods : goodslist) {
+				int GoodsNum =  goods.getNum();
+				System.out.println("原来货品的个数:"+GoodsNum);
+				goods.setNum(GoodsNum + IntInNum);
+				System.out.println("更新货品数量");
+				goodsDaoImp.updateGoods(goods);
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+
+			System.out.println("更新货品数量失败！！！！");
+			e.printStackTrace();
+		}
+	      response.sendRedirect("AddGoods.jsp"); 
+			System.out.println("入库成功！");
+	    	  
+}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

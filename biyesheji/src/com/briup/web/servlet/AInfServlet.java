@@ -47,7 +47,8 @@ public class AInfServlet extends HttpServlet {
 		try {
 			aDaoImp.updateAdmin(admin);
 			sqlSession.commit();
-			session.setAttribute("admin", admin);
+			//System.out.println(admin.toString());
+			session.setAttribute("Admin", admin);
 			response.sendRedirect("AInf.jsp");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

@@ -47,9 +47,9 @@ public class AloginServlet extends HttpServlet {
         {   
 	      if( password.equals(fAdmin2.getPassword()))
 	      {
-	      response.sendRedirect("AFirstLog.jsp");
-	      session.setAttribute("Admin", fAdmin2);
-	      System.out.println("帐号密码正确！");
+		      response.sendRedirect("AFirstLog.jsp");
+		      session.setAttribute("Admin", fAdmin2);
+		      System.out.println("帐号密码正确！");
 	          find=true;
 		  }
         }

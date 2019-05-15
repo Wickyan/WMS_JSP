@@ -39,7 +39,7 @@ public class OutGoodsServlet extends HttpServlet {
 	      System.out.println("IntOutNum:"+IntOutNum);
 	      //System.out.println("OutNum : " + OutNum);
 	      GoodsDaoImp goodsDaoImp = new GoodsDaoImp();
-	      OutGoodsDaoImp outGoodsDaoImp = new OutGoodsDaoImp();
+	      //OutGoodsDaoImp outGoodsDaoImp = new OutGoodsDaoImp();
 	      for(Goods goods2:goods){
 	    	  int GoodsNum =  goods2.getNum();
 	    	  System.out.println("goods2值为:"+goods2);
@@ -56,7 +56,7 @@ public class OutGoodsServlet extends HttpServlet {
 					goodsDaoImp.updateGoods(goods2);
 					sqlSession.commit();
 					goods3.setNum(IntOutNum);
-					outGoodsDaoImp.saveOutGoods(goods3);
+					//outGoodsDaoImp.saveOutGoods(goods3);
 					sqlSession.commit();
 				} catch (Exception e) {
 					// TODO Auto-generated catch block

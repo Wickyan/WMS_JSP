@@ -17,11 +17,12 @@ public class CustomerDaoImp implements CustomerDao{
 	public void saveCustomer(Customer customer) throws Exception {
 		// TODO Auto-generated method stub
 		SqlSession session = MybatisSessionFactory.getSession();
+		session.clearCache();session.clearCache();session.clearCache();	
 		CustomerMapper customerMapper = session.getMapper(CustomerMapper.class);
 		//System.out.println("客户保存开始");
 		customerMapper.insertCustomer(customer);
 		//System.out.println("客户保存");
-		//session.commit();
+		session.commit();
 		//session.close();
 		//System.out.println("客户保存结束");
 	}
@@ -30,17 +31,23 @@ public class CustomerDaoImp implements CustomerDao{
 	public void updateCustomer(Customer customer) {
 		// TODO Auto-generated method stub
 		SqlSession session = MybatisSessionFactory.getSession();
+		session.clearCache();session.clearCache();session.clearCache();	
 		CustomerMapper customerMapper = session.getMapper(CustomerMapper.class);
 		customerMapper.updateCustomer(customer);
-		
+		session.commit();
+		//session.close();
+
 	}
 
 	@Override
 	public List<Customer> findCustomerByName(String name) throws Exception {
 		// TODO Auto-generated method stub
 		SqlSession session = MybatisSessionFactory.getSession();
+		session.clearCache();session.clearCache();session.clearCache();	
 		CustomerMapper customerMapper = session.getMapper(CustomerMapper.class);
 		List<Customer> customer = customerMapper.selectCustomerByName(name);
+		//session.close();
+
 		return customer;
 	}
 
@@ -57,17 +64,22 @@ public class CustomerDaoImp implements CustomerDao{
 	public void deleteCustomer(Customer customer) throws Exception {
 		// TODO Auto-generated method stub
 		SqlSession session = MybatisSessionFactory.getSession();
+		session.clearCache();session.clearCache();session.clearCache();	
 		CustomerMapper customerMapper = session.getMapper(CustomerMapper.class);
 	    customerMapper.deleteCustomer(customer);
-		
+		//session.close();
+
 	}
 
 	@Override
 	public List<Customer> findAllCustomer() throws Exception {
 		// TODO Auto-generated method stub
 		SqlSession session = MybatisSessionFactory.getSession();
+		session.clearCache();session.clearCache();session.clearCache();	
 		CustomerMapper customerMapper = session.getMapper(CustomerMapper.class);
 	    //customerMapper.selectAllCustomer();
+		//session.close();
+
 		return customerMapper.selectAllCustomer();
 	}
 

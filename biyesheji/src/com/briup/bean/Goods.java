@@ -84,7 +84,7 @@ public class Goods {
 	 */
 	@Override
 	public String toString() {
-		return "Goods  name=" + name + ", address=" + address + ", num=" + num
+		return "Goods  name=" + name + ", address=" + address + ", goodsid=" + goodsid + ", num=" + num
 				+ ", sort=" + sort + ", price=" + price + " ";
 	}
      

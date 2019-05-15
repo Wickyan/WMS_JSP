@@ -18,8 +18,10 @@
 <script>
 $.validator.setDefaults({
     submitHandler: function() {
-     // alert("提交事件!");
-    	submit();
+    	if(confirm("确认入库？")){
+
+        	submit();
+    	}
     }
 });
 $().ready(function() {
@@ -34,7 +36,7 @@ $().ready(function() {
 			    },address:{
 			    	
 			    },price:{
-			    	digits:true,
+			    	number:true,
 			    },sort:{
 			    	
 			    },num:{
@@ -52,7 +54,7 @@ $().ready(function() {
 			    },address:{
 			    	
 			    },price:{
-			    	digits:"请输入正整数",
+			    	number:"请输入正数",
 			    },sort:{
 			    	
 			    },num:{
@@ -72,7 +74,14 @@ $().ready(function() {
 </style>
 		
 <body onLoad="MM_preloadImages('images/index_on.gif','images/reg_on.gif','images/order_on.gif','../images/top/topxmas/jp_on.gif','../images/top/topxmas/download_on.gif','../images/top/topxmas/bbs_on.gif','../images/top/topxmas/designwz_on.gif')" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0">
-		
+		<%@page import="com.briup.bean.Admin"%>
+	<%  
+     Admin admin = (Admin)session.getAttribute("Admin");
+      if(admin  == null){
+    	System.out.println("没登录呢");
+    	  %><jsp:forward page='Alogin.jsp'/><% 
+      }
+%>
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 		  <tr>
 		  </tr>

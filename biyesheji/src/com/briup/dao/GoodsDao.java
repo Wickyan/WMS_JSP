@@ -12,4 +12,6 @@ public interface GoodsDao {
 		List<Goods> findGoodsByName(String name) throws Exception;
 		List<Goods> findGoods() throws Exception;
 		List<Goods> findGoodsById(int id) throws Exception;
+		void updateGoodsAll(Goods goods)throws Exception;
+		void deleteGoods(Goods goods)throws Exception;
 }
