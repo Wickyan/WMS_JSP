@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-用户名已存在<a href="Aregister.jsp">请重新注册！</a>
+用户名已存在
+
+<a href="javascript:window.history.back()">请重新注册！</a>  
 </body>
 </html>

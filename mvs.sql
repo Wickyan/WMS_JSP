@@ -44,8 +44,8 @@ CREATE TABLE `admin` (
 
 /*!40000 ALTER TABLE `admin` DISABLE KEYS */;
 INSERT INTO `admin` (`account`,`password`,`name`,`sex`,`age`,`phone`,`address`,`email`) VALUES 
- ('admin','123456','张三','女','32','13611111111',NULL,NULL),
- ('wickyan','123456','wickyan','男','200','150000001333234','江苏省徐州市金山东路一号徐海学院','17asdasdas@asd');
+ ('admin','d033e22ae348aeb5660fc2140aec35850c4da997','管理员','男','20','123213123','江苏省徐州市金山东路一号徐海学院','asjd@ashd.jci'),
+ ('wickyan','7b21848ac9af35be0ddb2d6b9fc3851934db8420','wickyan','男','20','1500011111','江苏省徐州市金山东路一号徐海学院','asdad@asd.cpasd');
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
 
 
@@ -72,7 +72,7 @@ CREATE TABLE `customer` (
 
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
 INSERT INTO `customer` (`account`,`password`,`name`,`sex`,`age`,`phone`,`address`,`email`) VALUES 
- ('000000','000000','000000','男','40','','wickyan@cumt.cn','江苏省徐州市金山东路一号徐海学院');
+ ('000000','c984aed014aec7623a54f0591da07a85fd4b762d','000000的','男','40','15000','wickyan@cumt.cn','sadf@asud.com');
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 
 
@@ -82,12 +82,12 @@ INSERT INTO `customer` (`account`,`password`,`name`,`sex`,`age`,`phone`,`address
 
 DROP TABLE IF EXISTS `goods`;
 CREATE TABLE `goods` (
-  `name` varchar(20) NOT NULL,
-  `address` varchar(20) DEFAULT NULL,
+  `name` varchar(32) NOT NULL,
+  `address` varchar(32) DEFAULT NULL,
   `num` int(10) unsigned DEFAULT NULL,
   `goodsid` int(10) unsigned DEFAULT NULL,
-  `sort` varchar(15) DEFAULT NULL,
-  `price` varchar(10) DEFAULT NULL,
+  `sort` varchar(32) DEFAULT NULL,
+  `price` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=gbk;
 
@@ -97,28 +97,17 @@ CREATE TABLE `goods` (
 
 /*!40000 ALTER TABLE `goods` DISABLE KEYS */;
 INSERT INTO `goods` (`name`,`address`,`num`,`goodsid`,`sort`,`price`) VALUES 
- ('000','0000厂商',0,0,'000','000'),
- ('1212112','',190908,1212121,'',''),
- ('1351','',21,2313,'',''),
- ('222','222',1000,222,'','222'),
- ('234234','',234234,234234,'',''),
- ('333','333',633,333,'333','333'),
- ('333333','',333333,333333,'',''),
- ('4536653','',4356,456436,'',''),
- ('465465','',10000,54564545,'',''),
- ('555','555',1400,555,'5555',''),
- ('5555','江苏省徐州市金山东路一号徐海学院',0,5555,'矿泉水',''),
- ('647456','',657567,657567,'',''),
+ ('222','222',1000,222,'657567','2.15'),
+ ('333','333',933,333,'333','333'),
+ ('555','555',1300,555,'5555',''),
+ ('5555','江苏省徐州市金山东路一号徐海学院',300,5555,'矿泉水','5.5'),
  ('666','666厂商',1021,666,'','2'),
- ('666666','66666',66666,666666,'66666',''),
- ('777','',1300,777,'',''),
  ('7859879','97987',8968,678978,'96896','9789'),
- ('789579','7567',56756,657567,'657567','5'),
- ('789809','',9800,9809,'','980980'),
+ ('789809','我也不知道什么厂商',9800,9809,'什么类别？？？','15.26'),
  ('999','999',1111,999,'999','999'),
  ('康师傅方便面','康师傅',9000,12121123,'方便面','4'),
- ('康师傅矿泉水','康师傅',12000,123,'矿泉水','2'),
- ('康师傅矿泉水asd','',23,12,'',''),
+ ('康师傅矿泉水','康师傅',12500,123,'矿泉水','2'),
+ ('康师傅矿泉水asd','',13,12,'矿物质矿泉水','2.5'),
  ('康师傅矿泉水sad','江苏省徐州市金山东路一号徐海学院',10000,12121,'矿泉水','2'),
  ('康师傅矿泉水啊啊啊','222',1000,12121232,'222','222'),
  ('康师傅矿泉水安尔碘所所','江苏省徐州市金山东路一号徐海学院',10000,12121,'矿泉水','2'),

@@ -35,7 +35,7 @@ ToDo：
 		ps：查看客户信息界面怎么刷新的
 	[√]5.java.lang.NoSuchMethodError: com.briup.dao.impl.GoodsDaoImp.findGoodsById（）；
 	[√]6.在查看界面后面写上[修改]
-	[×]7.CSInfo 管理员能修改用户密码
+	[×]7.CSInfo 管理员能修改用户密码（重置）
 	[√]8.补全CRsuccess.jsp等页面(自动跳转）
 	
 	
@@ -43,5 +43,8 @@ ToDo：
 	[√]在update.java 里面获取goodslist2 将商品名设置成不可修改
 	[√]确认删除商品，确认修改信息，确认出库
 	[√]验证是否登录
-	[×]修改密码界面 确认修改密码
+	[√]修改密码界面 确认修改密码
 	[√]出库不合法返回
+5.15ToDo：
+	完成管理员密码修改
+	完成管理员界面修

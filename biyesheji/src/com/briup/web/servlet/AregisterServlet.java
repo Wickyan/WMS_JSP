@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.ibatis.session.SqlSession;
 
 import com.briup.bean.Admin;
+import com.briup.bean.SHA1;
 import com.briup.comment.exception.AdminServiceException;
 import com.briup.common.MybatisSessionFactory;
 import com.briup.dao.AdminDao;
@@ -31,6 +32,13 @@ public class AregisterServlet extends HttpServlet {
 	   String  phone = request.getParameter("phone");
 	   String  email = request.getParameter("email");
 	   String  address = request.getParameter("address");
+	   
+	   	try {
+		   password = SHA1.shaEncode(password);
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
+	   
 	   System.out.println("account:"+account);
 	   Admin admin = new Admin();
 	   admin.setAccount(account);

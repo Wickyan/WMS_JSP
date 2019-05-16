@@ -3,7 +3,7 @@
 <mapper namespace="com.briup.bean.AdminMapper">
 
 	<select id="selectAdminByName" 
-	parameterType="String" resultType="Admin">
+	parameterType="String" resultType="Admin" >
 		select * from admin
 		where account=#{account}
 	</select>

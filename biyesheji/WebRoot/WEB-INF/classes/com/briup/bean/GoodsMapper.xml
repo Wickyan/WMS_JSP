@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.briup.bean.GoodsMapper">
-	<select id="selectGoodsByName"       parameterType="string" resultType="Goods">
+	<select id="selectGoodsByName"       parameterType="string" resultType="Goods" useCache="false">
 		select * from goods
 		where name=#{name}
 	</select>
-	<select id="selectAllGoods" parameterType="Goods" resultType="Goods">
+	<select id="selectAllGoods" parameterType="Goods" resultType="Goods" >
 		   select * from goods  ORDER BY  goodsid
 	</select>
 	

@@ -22,8 +22,15 @@ public class LogoutServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		session.removeAttribute("admin");
+		session.removeAttribute("goods");
 
+		session.removeAttribute("customer");
+		session.removeAttribute("customerlist");
+		session.removeAttribute("list");
 		session.removeAttribute("Admin");
+		session.removeAttribute("goodsid");
+		session.removeAttribute("goodslist2");
+		session.removeAttribute("goodslist");
 		session.removeAttribute("account");
 		session.invalidate();
 		request.getRequestDispatcher("Alogin.jsp").forward(request, response);

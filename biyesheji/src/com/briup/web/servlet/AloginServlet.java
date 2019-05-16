@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.ibatis.session.SqlSession;
 
 import com.briup.bean.Admin;
+import com.briup.bean.SHA1;
 import com.briup.comment.exception.AdminServiceException;
 import com.briup.common.MybatisSessionFactory;
 import com.briup.dao.AdminDao;
@@ -29,6 +30,12 @@ public class AloginServlet extends HttpServlet {
     boolean find=false;
 	String  account  = request.getParameter("in_be");
 	String  password = request.getParameter("pass");
+	try {
+		   password = SHA1.shaEncode(password);
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
+	
 	HttpSession session = request.getSession();
 	session.setAttribute("account", account);
 	//System.out.println("账户为："+account);

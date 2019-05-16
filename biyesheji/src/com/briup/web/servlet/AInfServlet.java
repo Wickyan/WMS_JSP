@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.ibatis.session.SqlSession;
 
 import com.briup.bean.Admin;
+import com.briup.bean.SHA1;
 import com.briup.common.MybatisSessionFactory;
 import com.briup.dao.impl.AdminDaoImp;
 
@@ -23,26 +24,41 @@ public class AInfServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
        request.setCharacterEncoding("UTF-8");
   	   response.setCharacterEncoding("UTF-8");
-  	   String  account = request.getParameter("userid");
-  	   String  password = request.getParameter("password");
+  	   
+	   HttpSession session = request.getSession();
+
+       Admin admin = (Admin)session.getAttribute("Admin");
+
+       String  password = request.getParameter("password"); 
   	   String  name = request.getParameter("name"); 
   	   String  sex = request.getParameter("sex");
   	   String  age = request.getParameter("age");
   	   String  phone = request.getParameter("phone");
   	   String  email = request.getParameter("email");
   	   String  address = request.getParameter("address");
-  	   Admin admin = new Admin();
-  	   admin.setAccount(account);
-	   admin.setPassword(password);
-	   admin.setName(name);
-	   admin.setSex(sex);
-	   admin.setAge(age);
-	   admin.setPhone(phone);
-	   admin.setEmail(email);
-	   admin.setAddress(address);
+  	   
+  	  if(name != null) {
+  		  	System.out.println("修改信息");
+  		  admin.setName(name);
+	 	   admin.setSex(sex);
+	 	   admin.setAge(age);
+	 	   admin.setPhone(phone);
+	 	   admin.setEmail(email);
+	 	   admin.setAddress(address);
+  	  }
+  	  else {
+  		  System.out.println("修改密码");
+	  		try {
+	 		  password = SHA1.shaEncode(password);
+	 		} catch (Exception e1) {
+	 			e1.printStackTrace();
+	 		}
+	  		admin.setPassword(password);
+  	  }
+	   
 	   System.out.println("AInfServlet获取的信息:"+admin);
 	   SqlSession sqlSession = MybatisSessionFactory.getSession();
-	   HttpSession session = request.getSession();
+
 	   AdminDaoImp aDaoImp = new AdminDaoImp();
 		try {
 			aDaoImp.updateAdmin(admin);

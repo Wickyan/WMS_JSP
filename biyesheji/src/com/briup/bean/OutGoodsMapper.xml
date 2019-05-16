@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.briup.bean.OutGoodsMapper">
-	<select id="selectOutGoodsByName"       parameterType="string" resultType="Goods">
+	<select id="selectOutGoodsByName"       parameterType="string" resultType="Goods" useCache="false">
 		select * from OutStock
 		where name=#{name}
 	</select>
-	<select id="selectAllOutGoods" parameterType="Goods" resultType="Goods">
+	<select id="selectAllOutGoods" parameterType="Goods" resultType="Goods" >
 		   select * from OutStock
 	</select>
 	 

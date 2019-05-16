@@ -8,7 +8,7 @@
 
 <%@page import="java.sql.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<sql:setDataSource driver="com.mysql.jdbc.Driver" user="root" password="12345" url="jdbc:mysql://localhost:3306/mvs_2"/>
+<sql:setDataSource driver="com.mysql.jdbc.Driver" user="root" password="12345" url="jdbc:mysql://localhost:3306/mvs_5"/>
 <sql:query var="goodslist" sql="SELECT * FROM goods ORDER BY  goodsid"></sql:query>   
 
 
