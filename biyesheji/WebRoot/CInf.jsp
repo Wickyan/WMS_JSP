@@ -145,7 +145,7 @@ $().ready(function() {
 			
 			</td>
 			<td width="60%" class="tablebody1">
-			<input   size="32" name="password" value="<%=customer.getPassword() %>" style="font-family: Tahoma,Verdana,宋体; font-size: 12px; line-height: 15px; color: #000000">
+			<input  type="password" size="32" name="password" value="<%=customer.getPassword() %>" style="font-family: Tahoma,Verdana,宋体; font-size: 12px; line-height: 15px; color: #000000">
 			<font color="#FF0000">*</font></td>
 		</tr>
 		

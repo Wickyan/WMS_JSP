@@ -39,6 +39,16 @@ public class CustomerDaoImp implements CustomerDao{
 
 	}
 
+	public void updateCPwd(String id) {
+		// TODO Auto-generated method stub
+		SqlSession session = MybatisSessionFactory.getSession();
+		session.clearCache();session.clearCache();session.clearCache();	
+		CustomerMapper customerMapper = session.getMapper(CustomerMapper.class);
+		customerMapper.updateCPwd(id);
+		session.commit();
+		//session.close();
+
+	}
 	@Override
 	public List<Customer> findCustomerByName(String name) throws Exception {
 		// TODO Auto-generated method stub

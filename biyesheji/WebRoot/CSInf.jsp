@@ -15,8 +15,23 @@
 		<meta name="description" content="顾客信息表">
 		<title>所有顾客信息表</title>
 		<LINK href="css/main.css" rel=stylesheet>
-		<link rel="stylesheet" type="text/css" href="css/test3.css">
-		<script language = "JavaScript" src = "js/main.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/test3.css"><script src="https://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+<script src="https://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+<script src="https://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+ 
+<script>
+		
+		
+$().ready(function() {
+	 $("#reset").click(function(){
+		 if(confirm("您确认重置？？？？？")) {
+			 //window.location.replace("/biyesheji/GoodsDel");
+			 submit();
+	    	}
+		  });
+		}
+</script>
+	
 	</head>
 	<body onLoad="MM_preloadImages('images/index_on.gif','images/reg_on.gif','images/order_on.gif','../images/top/topxmas/jp_on.gif','../images/top/topxmas/download_on.gif','../images/top/topxmas/bbs_on.gif','../images/top/topxmas/designwz_on.gif')" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0">
 	
@@ -67,8 +82,9 @@
 			</td><td width="10%" class="tablebody1" align="center"><b>联系方式</b>
 			</td><td width="10%" class="tablebody1" align="center"><b>Email地址</b>
 			</td><td width="10%" class="tablebody1" align="center"><b>联系地址</b>
+			<!--  
 			</td><td width="10%" class="tablebody1" align="center"><b>信息修改</b>
-			</td>
+			</td>-->
 		</tr>
 		<%  
 		   CustomerDaoImp customerDaoImp = new CustomerDaoImp();
@@ -80,17 +96,21 @@
 		<c:forEach items="${sessionScope.list}" var="customer" begin="0"  varStatus="stusts">
 		<tr>    
 		   	     <td width="10%" class="tablebody1" align="center">${stusts.index}
-			</td><td width="10%" class="tablebody1" align="center">${customer.account}
-			</td><td width="10%" class="tablebody1" align="center">${customer.password}
+		   	     </td><td width="10%" class="tablebody1" align="center">${customer.account}
+			</td><td width="10%" class="tablebody1" align="center">
+			
+			<a id="reset" href="/biyesheji/ReSetPwd?caccount=${customer.account}">重置</a>
+			
 			</td><td width="10%" class="tablebody1" align="center">${customer.name}
 			</td><td width="10%" class="tablebody1" align="center">${customer.sex}
 			</td><td width="10%" class="tablebody1" align="center">${customer.age}
 			</td><td width="10%" class="tablebody1" align="center">${customer.phone}
 			</td><td width="10%" class="tablebody1" align="center">${customer.email}
 			</td><td width="10%" class="tablebody1" align="center">${customer.address}
+			<!-- 
 			</td><td width="15%" class="tablebody1" align="center">
 			<a href="ACInf.jsp?account=${customer.account}">修改</a>
-			</td>
+			</td> -->
 		</tr>
 		</c:forEach>
 			</table>

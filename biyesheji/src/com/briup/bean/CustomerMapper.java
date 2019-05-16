@@ -9,4 +9,5 @@ public interface CustomerMapper {
 	List<Customer> selectAllCustomer();
 	void updateCustomer(Customer customer);
 	void deleteCustomer(Customer customer);
+	public void updateCPwd(String id);
 }

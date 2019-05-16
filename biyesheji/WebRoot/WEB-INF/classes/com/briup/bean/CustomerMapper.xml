@@ -29,6 +29,13 @@
 			update Customer set account=#{account},password=#{password}, name=#{name}, sex=#{sex}, age=#{age}, phone=#{phone}, address=#{address}, email=#{email}
 			where account=#{account} 
 	</update>
+	
+	
+	<update id="updateCPwd" parameterType="String"> 
+			update Customer set password="123456"
+			where account=#{account} 
+	</update>
+	
 	<delete id="deleteCustomer" parameterType="Customer">
 	        delete from customer
 	        where  account=#{account}

@@ -15,11 +15,11 @@
 
 
 --
--- Create schema mvs_2
+-- Create schema mvs_5
 --
 
-CREATE DATABASE IF NOT EXISTS mvs_2;
-USE mvs_2;
+CREATE DATABASE IF NOT EXISTS mvs_5;
+USE mvs_5;
 
 --
 -- Definition of table `admin`
@@ -44,8 +44,7 @@ CREATE TABLE `admin` (
 
 /*!40000 ALTER TABLE `admin` DISABLE KEYS */;
 INSERT INTO `admin` (`account`,`password`,`name`,`sex`,`age`,`phone`,`address`,`email`) VALUES 
- ('admin','d033e22ae348aeb5660fc2140aec35850c4da997','管理员','男','20','123213123','江苏省徐州市金山东路一号徐海学院','asjd@ashd.jci'),
- ('wickyan','7b21848ac9af35be0ddb2d6b9fc3851934db8420','wickyan','男','20','1500011111','江苏省徐州市金山东路一号徐海学院','asdad@asd.cpasd');
+ ('wickyan','e7604fbbba3f6df337f25f8adcc547d7474b35a6','wickyan','男','20','15000000001225','44','yanweiqi199888@126.com');
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
 
 
@@ -72,7 +71,8 @@ CREATE TABLE `customer` (
 
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
 INSERT INTO `customer` (`account`,`password`,`name`,`sex`,`age`,`phone`,`address`,`email`) VALUES 
- ('000000','c984aed014aec7623a54f0591da07a85fd4b762d','000000的','男','40','15000','wickyan@cumt.cn','sadf@asud.com');
+ ('111111','123456','111111','女','20','','',''),
+ ('222222','123456','222222','男','22','','','');
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 
 
@@ -102,16 +102,17 @@ INSERT INTO `goods` (`name`,`address`,`num`,`goodsid`,`sort`,`price`) VALUES
  ('555','555',1300,555,'5555',''),
  ('5555','江苏省徐州市金山东路一号徐海学院',300,5555,'矿泉水','5.5'),
  ('666','666厂商',1021,666,'','2'),
- ('7859879','97987',8968,678978,'96896','9789'),
- ('789809','我也不知道什么厂商',9800,9809,'什么类别？？？','15.26'),
+ ('789809','我也不知道什么厂商',10000,9809,'什么类别？？？','15.26'),
+ ('996','',996,996,'',''),
  ('999','999',1111,999,'999','999'),
  ('康师傅方便面','康师傅',9000,12121123,'方便面','4'),
  ('康师傅矿泉水','康师傅',12500,123,'矿泉水','2'),
- ('康师傅矿泉水asd','',13,12,'矿物质矿泉水','2.5'),
+ ('康师傅矿泉水asd','当然是康师傅',12,12,'矿物质矿泉水','2.5'),
  ('康师傅矿泉水sad','江苏省徐州市金山东路一号徐海学院',10000,12121,'矿泉水','2'),
  ('康师傅矿泉水啊啊啊','222',1000,12121232,'222','222'),
  ('康师傅矿泉水安尔碘所所','江苏省徐州市金山东路一号徐海学院',10000,12121,'矿泉水','2'),
- ('康师傅矿泉水看见','江苏省徐州市金山东路一号徐海学院',10600,1989,'矿泉水','2');
+ ('康师傅矿泉水看见','江苏省徐州市金山东路一号徐海学院',10600,1989,'矿泉水','2'),
+ ('蒙牛牛奶','蒙牛',50,1212121,'牛奶','3');
 /*!40000 ALTER TABLE `goods` ENABLE KEYS */;
 
 
